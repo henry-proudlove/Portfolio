@@ -9,6 +9,6 @@ function random_color(){
 	return rand_color;
 }
 
-$("#content a").each( function(){
+$("#content.thumbs a").each( function(){
 	$(this).css("background-color",random_color());
 });

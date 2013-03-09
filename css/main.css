@@ -118,6 +118,12 @@ body{
 	font-size: 1em;
 }
 
+/* 
+ *
+ * STRUCTURE 
+ *
+ */
+
 #content{
 	margin: 0;
 }
@@ -156,16 +162,6 @@ body{
 		padding-top: 0.1em;
 	}
 
-
-
-
-/* 
- *
- * STRUCTURE 
- *
- */
-
-
 /*
  *
  * Nav padding
@@ -175,12 +171,16 @@ body{
 @media only screen and (min-width: 450px) {
 	
 	#site-title{
-		margin: 6% 6% 10%;
+		margin: 5.6% 5.6% 10%;
 		font-size: 2.3em;
 	}
 	
 	#site-nav{
-		margin: 4% 4% 0;
+		margin: 3.6% 3.6% 0;
+	}
+	
+	.nav-item{
+		width: 28.6%;
 	}
 }
 
@@ -197,7 +197,7 @@ body{
 	}
 	
 	#site-header{
-		margin: 5%;
+		margin: 40px;
 		padding-bottom: 12%;
 	}
 	
@@ -214,7 +214,7 @@ body{
 		text-align: right;
 	}
 	.nav-item{
-		margin: 0 0 0 3%;
+		margin: 0 0 0 30px;
 		width: auto;
 	}
 }
@@ -228,7 +228,7 @@ body{
 /* two col */
 
 @media only screen and (min-width: 360px) {
-	#content a{
+	#content.thumbs a{
 		width: 50%;
 		float: left;
 		padding-top: 50%;
@@ -239,7 +239,7 @@ body{
 /* three col */
 
 @media only screen and (min-width: 720px) {
-	#content a{
+	#content.thumbs a{
 		width: 33.33%;
 		padding-top: 33.33%;
 	}
@@ -248,7 +248,7 @@ body{
 /* four col */
 
 @media only screen and (min-width: 1080px) {
-	#content a{
+	#content.thumbs a{
 		width: 25%;
 		padding-top: 25%;
 	}
@@ -257,7 +257,7 @@ body{
 /* five col */
 
 @media only screen and (min-width: 1440px) {
-	#content a{
+	#content.thumbs a{
 		width: 20%;
 		padding-top: 20%;
 	}
@@ -265,7 +265,22 @@ body{
 }
 
 
+/*
+ *
+ * Contact page
+ *
+ */
 
+#content.contact{
+	height: 100%;
+	position: absolute;
+	width: 100%;
+}
+
+#content.contact a{
+	height: 50%;
+	padding-top: 0;
+}
 
 
 
