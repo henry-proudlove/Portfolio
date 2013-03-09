@@ -97,13 +97,8 @@ textarea {
 
 /* Fonts */
 
-@font-face{
-	font-family: 'Din Bold';
-	
-}
-
 body{
-	font-family:'DIN Next W01 Regular', 'FFDINReg' , arial, sans-serif;
+	font-family:'DIN Next W01 Regular', arial, sans-serif;
 	font-size: 15px;
 	color:#444;
 	transition: all 2s;
@@ -113,7 +108,7 @@ body{
 }
 
 #site-title{
-	font-family:'DIN Next W01 Medium', 'FFDINBol' , sans-serif;
+	font-family:'DIN Next W01 Medium', arial, sans-serif;
 	font-weight: normal;
 	font-size: 1.5em;
 	line-height: 1em;
@@ -172,6 +167,24 @@ body{
 
 
 /*
+ *
+ * Nav padding
+ *
+ */
+ 
+@media only screen and (min-width: 450px) {
+	
+	#site-title{
+		margin: 6% 6% 10%;
+		font-size: 2.3em;
+	}
+	
+	#site-nav{
+		margin: 4% 4% 0;
+	}
+}
+
+/*
  * Nav switch
  */
  
@@ -204,9 +217,9 @@ body{
 		margin: 0 0 0 3%;
 		width: auto;
 	}
-	
-
 }
+ 
+
 
 /*
  * thumb sizes 
@@ -230,11 +243,6 @@ body{
 		width: 33.33%;
 		padding-top: 33.33%;
 	}
-	
-	#site-header{
-		margin: 3.2%;
-		padding-bottom: 10%;
-	}
 }
 
 /* four col */
@@ -254,10 +262,6 @@ body{
 		padding-top: 20%;
 	}
 	
-	#site-header{
-		margin: 2%;
-		padding-bottom: 8%;
-	}
 }
 
 
