@@ -123,6 +123,12 @@ body{
  * STRUCTURE 
  *
  */
+ 
+#container.contact{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+}
 
 #content{
 	margin: 0;
@@ -147,20 +153,22 @@ body{
 	box-sizing: border-box;
 }
 
-	#site-header{
-		margin: 0;
-	}
-	
-	#site-title{
-		margin: 8% 8% 12%;
-		/*border-bottom: 1px solid #ededed;
-		padding-bottom: 4%;*/
-	}
-	
-	#site-nav{
-		margin: 6% 6% 0;
-		padding-top: 0.1em;
-	}
+#site-header{
+	margin: 0;
+}
+
+#site-title{
+	margin: 8% 8% 12%;
+	/*border-bottom: 1px solid #ededed;
+	padding-bottom: 4%;*/
+}
+
+#site-nav{
+	margin: 6% 6% 0;
+	padding-top: 0.1em;
+}
+
+
 
 /*
  *
@@ -197,8 +205,13 @@ body{
 	}
 	
 	#site-header{
+		height: 35%;
+		/*margin: 40px;
+		padding-bottom: 12%;*/
+	}
+	
+	#site-header #wrapper{
 		margin: 40px;
-		padding-bottom: 12%;
 	}
 	
 	#site-title{
@@ -272,7 +285,7 @@ body{
  */
 
 #content.contact{
-	height: 100%;
+	height: 65%;
 	position: absolute;
 	width: 100%;
 }
