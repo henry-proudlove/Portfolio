@@ -124,6 +124,44 @@ body{
  *
  */
  
+ 
+/*
+ *
+ * Contact page
+ *
+ */
+
+#content.contact a{
+	height: 50%;
+	padding-top: 0;
+	text-decoration: none;
+	color: white;
+	font-size: 1.5em;
+	font-family:'DIN Next W01 Medium', arial, sans-serif;
+	text-align: center;
+	display: table;
+	min-height: 4em;
+}
+
+#content.contact{
+	background: #71c5ef;
+}
+
+#content.contact a span{
+	display: table-cell;
+	vertical-align: middle;
+}
+
+#content.contact a.email{
+	background: #cc3300;
+}
+
+#content.contact a.linkedin{
+	background: #71c5ef;
+}
+
+
+ 
 #container.contact{
 	position: absolute;
 	width: 100%;
@@ -144,7 +182,7 @@ body{
 }
 
 .nav-item{
-	margin: 0 2%;
+	margin: 0 3%;
 	width: 28%;
 	line-height: 1em;
 	padding: 0.5em 0 1em;
@@ -153,20 +191,49 @@ body{
 	box-sizing: border-box;
 }
 
+.nav-item.first{
+	margin-left: 0;
+}
+
+.nav-item.last{
+	margin-right: 0;
+}
+
 #site-header{
 	margin: 0;
+	height:25%;
+	position: relative;
+	min-height: 7.5em;
+	padding: 0;
+	box-sizing: border-box;
 }
 
 #site-title{
-	margin: 8% 8% 12%;
-	/*border-bottom: 1px solid #ededed;
+	/* margin: 2%;
+	border-bottom: 1px solid #ededed;
 	padding-bottom: 4%;*/
+	margin: 0;
+	padding: 8%;
 }
 
 #site-nav{
-	margin: 6% 6% 0;
-	padding-top: 0.1em;
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	box-sizing: border-box;
+	padding: 0 8%;
 }
+
+#site-header{
+}
+
+#content.contact{
+	height: 75%;
+	position: absolute;
+	width: 100%;
+}
+
+
 
 
 
@@ -179,16 +246,21 @@ body{
 @media only screen and (min-width: 450px) {
 	
 	#site-title{
-		margin: 5.6% 5.6% 10%;
+		padding: 5.6%;
 		font-size: 2.3em;
 	}
 	
 	#site-nav{
-		margin: 3.6% 3.6% 0;
+		/*margin: 3.6% 3.6% 0;*/
+		padding: 0 5.6%;
 	}
 	
 	.nav-item{
 		width: 28.6%;
+	}
+	
+	#site-header {
+		min-height: 8.5em;
 	}
 }
 
@@ -205,13 +277,10 @@ body{
 	}
 	
 	#site-header{
-		height: 35%;
+		height: 30%;
 		/*margin: 40px;
 		padding-bottom: 12%;*/
-	}
-	
-	#site-header #wrapper{
-		margin: 40px;
+		padding: 40px;
 	}
 	
 	#site-title{
@@ -222,13 +291,24 @@ body{
 	}
 	
 	#site-nav{
-		padding-top: 0.1em;
-		margin: 0;
+		padding: 0.1em 0 0 0;
 		text-align: right;
+		position: static;
+		width: auto;
 	}
 	.nav-item{
 		margin: 0 0 0 30px;
 		width: auto;
+	}
+	
+	#content.contact{
+		height: 70%;
+		position: absolute;
+		width: 100%;
+	}
+	
+	#content.contact a{
+		font-size: 2.3em;
 	}
 }
  
@@ -277,23 +357,6 @@ body{
 	
 }
 
-
-/*
- *
- * Contact page
- *
- */
-
-#content.contact{
-	height: 65%;
-	position: absolute;
-	width: 100%;
-}
-
-#content.contact a{
-	height: 50%;
-	padding-top: 0;
-}
 
 
 
