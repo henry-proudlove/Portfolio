@@ -101,10 +101,13 @@ body{
 	font-family:'DIN Next W01 Regular', arial, sans-serif;
 	font-size: 15px;
 	color:#444;
-	transition: all 2s;
-	-moz-transition: all 2s; /* Firefox 4 */
-	-webkit-transition: all 2s; /* Safari and Chrome */
-	-o-transition: all 2s; /* Opera */
+}
+
+*{
+	transition: all 0.3s;
+	-moz-transition: all 0.3s; /* Firefox 4 */
+	-webkit-transition: all 0.3s; /* Safari and Chrome */
+	-o-transition: all 0.3s; /* Opera */
 }
 
 #site-title{
@@ -154,6 +157,10 @@ body{
 
 #content.contact a.email{
 	background: #cc3300;
+}
+
+#content.contact a.email:hover{
+	background: black;
 }
 
 #content.contact a.linkedin{
