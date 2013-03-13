@@ -18,9 +18,11 @@ textarea {
     color: #222;
 }
 
-body {
-    font-size: 1em;
-    line-height: 1.4;
+html{
+	font-family:'DIN Next W01 Regular', arial, sans-serif;
+	font-size: 15px;
+	line-height: 1.4;
+	color:#444;
 }
 
 /*
@@ -97,24 +99,15 @@ textarea {
 
 /* Fonts */
 
-body{
-	font-family:'DIN Next W01 Regular', arial, sans-serif;
-	font-size: 15px;
-	color:#444;
-}
-
-*{
-	transition: all 0.3s;
-	-moz-transition: all 0.3s; /* Firefox 4 */
-	-webkit-transition: all 0.3s; /* Safari and Chrome */
-	-o-transition: all 0.3s; /* Opera */
-}
-
-#site-title{
+#site-title, .about-title{
 	font-family:'DIN Next W01 Medium', arial, sans-serif;
 	font-weight: normal;
 	font-size: 1.5em;
 	line-height: 1em;
+}
+
+.about-title{
+	font-size: 4em;
 }
 
 #site-nav{
@@ -130,11 +123,11 @@ body{
  
 /*
  *
- * Contact page
+ * no-scroll page
  *
  */
 
-#content.contact a{
+#content.no-scroll a{
 	height: 50%;
 	padding-top: 0;
 	text-decoration: none;
@@ -143,33 +136,37 @@ body{
 	font-family:'DIN Next W01 Medium', arial, sans-serif;
 	text-align: center;
 	display: table;
-	min-height: 4em;
+	min-height: 8rem;
 }
 
-#content.contact{
+#content.no-scroll{
 	background: #71c5ef;
 }
 
-#content.contact a span{
+#content.no-scroll a span{
 	display: table-cell;
 	vertical-align: middle;
 }
 
-#content.contact a.email{
+#content.no-scroll a.email{
 	background: #cc3300;
 }
 
-#content.contact a.email:hover{
+#content.no-scroll a.email:hover{
 	background: black;
 }
 
-#content.contact a.linkedin{
+#content.no-scroll a.linkedin{
 	background: #71c5ef;
 }
 
-
+/*
+ *
+ * header and thumbs
+ *
+ */
  
-#container.contact{
+#container{
 	position: absolute;
 	width: 100%;
 	height: 100%;
@@ -177,9 +174,10 @@ body{
 
 #content{
 	margin: 0;
+	box-sizing: border-box;
 }
 
-#content a{
+#content.thumbs a{
 	margin: 0;
 	width: 100%;
 	padding-top: 100%;
@@ -192,7 +190,7 @@ body{
 	margin: 0 3%;
 	width: 28%;
 	line-height: 1em;
-	padding: 0.5em 0 1em;
+	padding: 0.5em 0 0.7em;
 	display: inline-block;
 	border-top: 3px solid #ededed;
 	box-sizing: border-box;
@@ -210,7 +208,7 @@ body{
 	margin: 0;
 	height:25%;
 	position: relative;
-	min-height: 7.5em;
+	min-height: 8rem;
 	padding: 0;
 	box-sizing: border-box;
 }
@@ -231,14 +229,64 @@ body{
 	padding: 0 8%;
 }
 
-#site-header{
-}
-
-#content.contact{
+#content.no-scroll{
 	height: 75%;
 	position: absolute;
 	width: 100%;
 }
+
+
+/*
+ *
+ * about page
+ *
+ */
+ 
+#content.about{
+	background: #149449;
+	min-height: 75%;
+	padding: 3% 20px;
+	color: white;
+}
+
+.about-title{
+	text-align: center;
+	clear: both;
+	margin: 0;
+}
+
+h1.about-title{
+	margin-top: 0.5em;
+}
+
+.section-header, .section-content{
+	font-family: 'DIN Next W01 Light';
+	font-size: 1.25em;
+}
+
+.section-content{
+	color: #a7ceb3;
+	color: rgba(255,255,255,0.5);
+}
+
+.about-section{
+	width: 100%;
+	padding: 2em 20px 2.5em;
+	box-sizing: border-box;
+	line-height: 2em;
+}
+
+.cv-link{
+	color: white;
+	text-decoration: none;
+}
+
+.cv-link:hover{
+	color: #a7ceb3;
+	color: rgba(255,255,255,0.5);
+}
+
+
 
 
 
@@ -265,10 +313,6 @@ body{
 	.nav-item{
 		width: 28.6%;
 	}
-	
-	#site-header {
-		min-height: 8.5em;
-	}
 }
 
 /*
@@ -284,7 +328,6 @@ body{
 	}
 	
 	#site-header{
-		height: 30%;
 		/*margin: 40px;
 		padding-bottom: 12%;*/
 		padding: 40px;
@@ -298,7 +341,7 @@ body{
 	}
 	
 	#site-nav{
-		padding: 0.1em 0 0 0;
+		padding: 0;
 		text-align: right;
 		position: static;
 		width: auto;
@@ -308,13 +351,12 @@ body{
 		width: auto;
 	}
 	
-	#content.contact{
-		height: 70%;
+	#content.no-scroll{
 		position: absolute;
 		width: 100%;
 	}
 	
-	#content.contact a{
+	#content.no-scroll a{
 		font-size: 2.3em;
 	}
 }
@@ -343,6 +385,11 @@ body{
 		width: 33.33%;
 		padding-top: 33.33%;
 	}
+	
+	.about-section{
+		width: 33.33%;
+		float: left;
+	}
 }
 
 /* four col */
@@ -363,8 +410,50 @@ body{
 	}
 	
 }
+no-scroll
 
+/*
+ * Header Height
+ */
+ 
+/*@media only screen and (min-height: 480px) {
+	#site-header{ 
+		height: 35%;
+	}
+	
+	#content.no-scroll{
+		height: 65%;
+	}
+}*/
 
+@media only screen and (min-height: 700px) {
+	#site-header{ 
+		height: 30%;
+	}
+	
+	#content.no-scroll{
+		height: 70%;
+	}
+	
+	#content.about{
+		min-height: 70%;
+	}
+	
+}
+
+@media only screen and (min-height: 1024px) {
+	#site-header{ 
+		height: 20%;
+	}
+	
+	#content.no-scroll{
+		height: 80%;
+	}
+	
+	#content.about{
+		min-height: 80%;
+	}
+}
 
 
 
