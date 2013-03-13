@@ -106,10 +106,6 @@ textarea {
 	line-height: 1em;
 }
 
-.about-title{
-	font-size: 4em;
-}
-
 #site-nav{
 	font-size: 1em;
 }
@@ -241,16 +237,15 @@ textarea {
  * about page
  *
  */
- 
+
 #content.about{
 	background: #149449;
 	min-height: 75%;
-	padding: 3% 20px;
 	color: white;
-}
+	padding: 8%;
+}	
 
 .about-title{
-	text-align: center;
 	clear: both;
 	margin: 0;
 }
@@ -259,9 +254,13 @@ h1.about-title{
 	margin-top: 0.5em;
 }
 
+footer.about-title{
+	margin-top: 1em;
+}
+
 .section-header, .section-content{
 	font-family: 'DIN Next W01 Light';
-	font-size: 1.25em;
+	font-size: 1em;
 }
 
 .section-content{
@@ -271,9 +270,9 @@ h1.about-title{
 
 .about-section{
 	width: 100%;
-	padding: 2em 20px 2.5em;
+	padding: 0.5em 0;
 	box-sizing: border-box;
-	line-height: 2em;
+	line-height: 1.7;
 }
 
 .cv-link{
@@ -284,6 +283,13 @@ h1.about-title{
 .cv-link:hover{
 	color: #a7ceb3;
 	color: rgba(255,255,255,0.5);
+}
+
+.section-header{
+	margin: 1em 0 0.5em;
+}
+.section-content{
+	margin: 0;
 }
 
 
@@ -313,6 +319,10 @@ h1.about-title{
 	.nav-item{
 		width: 28.6%;
 	}
+	
+	#content.about{
+		padding: 5.6%;
+	}	
 }
 
 /*
@@ -359,6 +369,37 @@ h1.about-title{
 	#content.no-scroll a{
 		font-size: 2.3em;
 	}
+	
+	.about-section{
+		width: 33.33%;
+		float: left;
+		padding: 2em 20px 3.3em;
+	}
+	
+	#content.about{
+		padding: 3% 20px;
+		font-size: 0.95em;
+	}
+	
+	.about-title{
+		text-align: center;
+	}
+	
+	.section-header, .section-content{
+		font-size: 1.25em;
+	}
+	
+	.section-header{
+		margin: 0.67em 0;	
+	}
+	
+	.section-content p{
+		margin: 1em;
+	}
+	
+	.about-title{
+		font-size: 4em;
+	}
 }
  
 
@@ -385,11 +426,6 @@ h1.about-title{
 		width: 33.33%;
 		padding-top: 33.33%;
 	}
-	
-	.about-section{
-		width: 33.33%;
-		float: left;
-	}
 }
 
 /* four col */
@@ -409,8 +445,27 @@ h1.about-title{
 		padding-top: 20%;
 	}
 	
+	#content.about{
+		font-size: 1.2em;
+	}
+	
 }
-no-scroll
+
+@media only screen and (min-width: 1600px) {
+
+	#content.about{
+		font-size: 1.4em;
+	}
+	
+}
+
+@media only screen and (min-width: 1800px) {
+
+	#content.about{
+		font-size: 1.6em;
+	}
+	
+}
 
 /*
  * Header Height
