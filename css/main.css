@@ -255,7 +255,7 @@ h1.about-title{
 }
 
 footer.about-title{
-	margin-top: 1em;
+	margin: 1em 0 0.5em;;
 }
 
 .section-header, .section-content{
@@ -322,7 +322,11 @@ footer.about-title{
 	
 	#content.about{
 		padding: 5.6%;
-	}	
+	}
+	
+	.about-title{
+		font-size: 2.3em;
+	}
 }
 
 /*
@@ -370,10 +374,23 @@ footer.about-title{
 		font-size: 2.3em;
 	}
 	
+	#content.about article{
+		width: 641px;
+		margin: 0 auto;
+	}
+}
+
+@media only screen and (min-width: 900px){
+
 	.about-section{
 		width: 33.33%;
 		float: left;
 		padding: 2em 20px 3.3em;
+	}
+	
+	#content.about article{
+		width: auto;
+		margin: 0;
 	}
 	
 	#content.about{
@@ -400,6 +417,7 @@ footer.about-title{
 	.about-title{
 		font-size: 4em;
 	}
+
 }
  
 
@@ -470,16 +488,6 @@ footer.about-title{
 /*
  * Header Height
  */
- 
-/*@media only screen and (min-height: 480px) {
-	#site-header{ 
-		height: 35%;
-	}
-	
-	#content.no-scroll{
-		height: 65%;
-	}
-}*/
 
 @media only screen and (min-height: 700px) {
 	#site-header{ 
@@ -492,6 +500,21 @@ footer.about-title{
 	
 	#content.about{
 		min-height: 70%;
+	}
+	
+}
+
+@media only screen and (min-height: 850px) {
+	#site-header{ 
+		height: 25%;
+	}
+	
+	#content.no-scroll{
+		height: 75%;
+	}
+	
+	#content.about{
+		min-height: 75%;
 	}
 	
 }
@@ -509,6 +532,8 @@ footer.about-title{
 		min-height: 80%;
 	}
 }
+
+
 
 
 
