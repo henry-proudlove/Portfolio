@@ -177,7 +177,7 @@ textarea {
 	margin: 0;
 	width: 100%;
 	padding-top: 100%;
-	background: #333;
+	background: #444;
 	display: block;
 
 }
@@ -187,9 +187,12 @@ textarea {
 	width: 28%;
 	line-height: 1em;
 	padding: 0.5em 0 0.7em;
-	display: inline-block;
-	border-top: 3px solid #ededed;
+	display: block;
+	float: left;
+	/*border-top: 2px solid #ededed;*/
 	box-sizing: border-box;
+	color: #444;
+	text-decoration: none;
 }
 
 .nav-item.first{
@@ -292,6 +295,17 @@ footer.about-title{
 	margin: 0;
 }
 
+#section-marker{
+	width: 100%;
+}
+
+#marker-shape{
+	background: black;
+	height: 2px;
+	position: absolute;
+	width: 100%;
+}	
+
 
 
 
@@ -357,8 +371,11 @@ footer.about-title{
 	#site-nav{
 		padding: 0;
 		text-align: right;
-		position: static;
+		position: absolute;
+		right: 40px;
+		top: 40px;
 		width: auto;
+		float: right;	
 	}
 	.nav-item{
 		margin: 0 0 0 30px;

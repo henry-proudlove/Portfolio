@@ -12,3 +12,38 @@ function random_color(){
 $("#content.thumbs a").each( function(){
 	$(this).css("background-color",random_color());
 });
+
+function navPos(){
+	$('.nav-item').each(function(){
+		pos = $(this).offset().left - $('#site-nav').offset().left;
+		width = $(this).width();
+		$(this).data({
+			'pos' : pos,
+			'width' : width
+		});
+		console.log($(this).data().pos);
+	});
+}
+
+$(document).ready(function() {
+	navPos();
+	$(window).on("debouncedresize", function( event ) {
+		navPos();
+	});
+	
+	$('#marker-shape').width($('.nav-item.active').data().width);
+	
+	$('.nav-item').hover( 
+		function(){
+			var data = $(this).data();
+			console.log(data);
+			$('#marker-shape').width(data.width);
+			$('#marker-shape').css('left' , data.pos);
+		},
+		function(){
+			var data = $('.nav-item.active').data();
+			$('#marker-shape').width(data.width);
+			$('#marker-shape').css('left' , data.pos);
+		}
+		);
+});
