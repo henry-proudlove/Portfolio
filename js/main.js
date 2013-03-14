@@ -26,13 +26,11 @@ function navPos(){
 		width = $e.width();
 		if ($e.hasClass('last') && $(window).width() > 720){
 			width = width - 3;
-			console.log('YEAH!');
 		}
 		$e.data({
 			'pos' : pos,
 			'width' : width
 		});
-		console.log('position: ' + pos);
 	});
 }
 
@@ -46,19 +44,16 @@ function imgStats(){
 	var imgs = $('#content.intro').find('#imgs').children();
 	var c = imgs.length;
 	var w = $(this).width();
-	var h = $(this).height();
 	var a = w/c;
 	returnarr = [c,w,a];
 	return returnarr;
 }
 
 function hitAreas(imgs){
-	console.log(imgs);
 	c = imgs[0];
 	w = imgs[1];
 	a = imgs[2];
 	var l = 0;
-	console.log('Left: ' + l);
 	$e = $('#hit-areas');
 	if($e.children().length > 0){
 		$e.children().each(function(i){
@@ -68,7 +63,6 @@ function hitAreas(imgs){
 	}else{
 		for (var i = 0; i < c; i++) {
 			l = i*a;
-			console.log('Left: ' + l);
 			$e.append(
 				'<div class="hit-area" style="width:' + a + 'px; left:' + l + 'px;"></div>'
 			);
@@ -80,7 +74,7 @@ $(document).ready(function() {
 	navPos();
 	$(window).on("debouncedresize", function( event ) {
 		navPos();
-		hitAreas(imgStats());
+		var introImgs = imgStats();
 		$('#marker-shape').moveMarker($('.nav-item.active').data())
 	});
 	$('#marker-shape')
@@ -90,18 +84,28 @@ $(document).ready(function() {
 		function(){
 			var data = $(this).data();
 			$('#marker-shape').moveMarker(data);
-			console.log(data);
 		},
 		function(){
 			var data = $('.nav-item.active').data();
 			$('#marker-shape').moveMarker(data);
-			console.log(data);
 		}
 	);
 	
-	hitAreas(imgStats());
+	var  imgs = imgStats();
+	console.log(imgs);
+	$('#content.intro').hover(function(){
+		var imgs = $('#content.intro').find('#imgs').children();
+		var c = imgs.length;
+		var w = $(this).width();
+		var a = w/c;
+		$(document).mousemove(function(e){
+		  x = e.pageX;
+		  s = Math.ceil(x/a);
+		  console.log(s);
+   		}); 
+	});
 	
-	$('.hit-area').hover(
+	/*$('.hit-area').hover(
 		function(){
 			var i = $(this).index();
 			console.log(i);
@@ -116,6 +120,6 @@ $(document).ready(function() {
 		},
 		function(){
 		}
-	);
+	);*/
 		
 });
