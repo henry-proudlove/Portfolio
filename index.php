@@ -54,22 +54,14 @@
 			
 						// Open a known directory, and proceed to read its contents
 						if (is_dir($dir)) {
-							if ($dh = opendir($dir)) {
-								$images = array();
-								while (($file = readdir($dh)) !== false) {
-									if (!is_dir($dir.$file)) {
-										$images[] = $file;
-									}
-								}
-								closedir($dh);
-							}
+							$images = glob($dir . '*.{jpg,jpeg,png,gif}', GLOB_BRACE);
 						}
 						$ic = count($images);
 						for($i=0; $i < $ic; $i ++){
 							if($i==0){
-								echo '<div class="img img-show" style="background-image:url(\'img/intro-imgs/' . $images[$i] . '\'); background-size: cover"></div>'; 
+								echo '<div class="img img-show" style="background-image:url(\'' . $images[$i] . '\'); background-size:cover; background-position-y: center;"></div>'; 
 							}else{
-								echo '<div class="img" style="background-image:url(\'img/intro-imgs/' . $images[$i] . '\'); background-size: cover"></div>'; 
+								echo '<div class="img" style="background-image:url(\'' . $images[$i] . '\'); background-size:cover; background-position-y: center;"></div>'; 
 							}
 						}
 					?>
