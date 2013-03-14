@@ -170,7 +170,9 @@ textarea {
 
 #content{
 	margin: 0;
-	box-sizing: border-box;
+	        box-sizing:border-box;
+	   -moz-box-sizing:border-box; /* Firefox */
+	-webkit-box-sizing:border-box; /* Safari */
 }
 
 #content.thumbs a{
@@ -202,7 +204,9 @@ textarea {
 	display: block;
 	float: left;
 	/*border-top: 2px solid #ededed;*/
-	box-sizing: border-box;
+	        box-sizing:border-box;
+	   -moz-box-sizing:border-box; /* Firefox */
+	-webkit-box-sizing:border-box; /* Safari */
 	color: #444;
 	text-decoration: none;
 }
@@ -227,7 +231,9 @@ textarea {
 	position: relative;
 	min-height: 8rem;
 	padding: 5%;
-	box-sizing: border-box;
+	        box-sizing:border-box;
+	   -moz-box-sizing:border-box; /* Firefox */
+	-webkit-box-sizing:border-box; /* Safari */
 }
 
 #site-title{
@@ -242,7 +248,9 @@ textarea {
 	position: absolute;
 	bottom: 0;
 	width: 90%;
-	box-sizing: border-box;
+			box-sizing:border-box;
+	   -moz-box-sizing:border-box; /* Firefox */
+	-webkit-box-sizing:border-box; /* Safari */
 	padding: 0;
 }
 
@@ -285,7 +293,9 @@ footer.about-title{
 .about-section{
 	width: 100%;
 	padding: 0.5em 0;
-	box-sizing: border-box;
+	        box-sizing:border-box;
+	   -moz-box-sizing:border-box; /* Firefox */
+	-webkit-box-sizing:border-box; /* Safari */
 	line-height: 1.7;
 }
 
