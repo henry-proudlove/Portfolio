@@ -32,29 +32,30 @@ function navPos(){
 	});
 }
 
-function moveMarker(d){
-	$('#marker-shape').width(d.width);
-	$('#marker-shape').css('left' , d.pos);
+jQuery.fn.moveMarker = function(d){
+	$e = $(this[0]);
+	$e.css({'left' : d.pos}).width(d.width);
+	return $e;
 }
 
 $(document).ready(function() {
 	navPos();
 	$(window).on("debouncedresize", function( event ) {
 		navPos();
-		moveMarker($('.nav-item.active').data());
+		$('#marker-shape').moveMarker($('.nav-item.active').data())
 	});
-	
-	moveMarker($('.nav-item.active').data());
-	
+	$('#marker-shape')
+		.moveMarker($('.nav-item.active').data())
+		.addClass('trans');
 	$('.nav-item').hover( 
 		function(){
 			var data = $(this).data();
-			moveMarker(data);
+			$('#marker-shape').moveMarker(data);
 			console.log(data);
 		},
 		function(){
 			var data = $('.nav-item.active').data();
-			moveMarker(data);
+			$('#marker-shape').moveMarker(data);
 			console.log(data);
 		}
 	);

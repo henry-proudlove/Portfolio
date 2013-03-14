@@ -314,8 +314,15 @@ footer.about-title{
 	background: black;
 	height: 2px;
 	position: absolute;
-	width: 100%;
-}	
+}
+
+#marker-shape.trans{
+			transition: width 0.5s, left 0.5s;
+		 -o-transition: width 0.5s, left 0.5s;
+	   -moz-transition: width 0.5s, left 0.5s;
+	-webkit-transition: width 0.5s, left 0.5s;
+
+}
 
 
 
@@ -347,6 +354,7 @@ footer.about-title{
 	.nav-item{
 		width: 33.33%;
 		padding: 0.5em 3% 0.7em;
+		font-size: 1.25em;
 	}
 	
 	
