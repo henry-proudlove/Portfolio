@@ -335,6 +335,44 @@ footer.about-title{
 	opacity: 1;
 }
 
+/*
+ *
+ * intro page
+ *
+ */
+ 
+#content.intro #imgs div{
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	background: #444;
+}
+
+#hit-areas, imgs{
+	position: absolute:
+	width: 100%;
+	height: 100%;
+}
+
+.hit-area{
+	position: absolute;
+	height: 100%;
+}
+
+#imgs .img{
+	/*transition: opacity 0.5s;
+		 -o-transition: opacity 0.5s;
+	   -moz-transition: opacity 0.5s;
+	-webkit-transition: opacity 0.5s;*/
+	opacity: 0;
+}
+
+
+#imgs .img.img-show{
+	opacity: 1;
+}
+
+
 
 
 

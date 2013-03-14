@@ -13,6 +13,10 @@ $("#content.thumbs a").each( function(){
 	$(this).css("background-color",random_color());
 });
 
+$("#imgs .img").each( function(){
+	$(this).css("background-color",random_color());
+});
+
 function navPos(){
 	$('.nav-item').each(function(){
 		$e = $(this);
@@ -38,10 +42,45 @@ jQuery.fn.moveMarker = function(d){
 	return $e;
 }
 
+function imgStats(){
+	var imgs = $('#content.intro').find('#imgs').children();
+	var c = imgs.length;
+	var w = $(this).width();
+	var h = $(this).height();
+	var a = w/c;
+	returnarr = [c,w,a];
+	return returnarr;
+}
+
+function hitAreas(imgs){
+	console.log(imgs);
+	c = imgs[0];
+	w = imgs[1];
+	a = imgs[2];
+	var l = 0;
+	console.log('Left: ' + l);
+	$e = $('#hit-areas');
+	if($e.children().length > 0){
+		$e.children().each(function(i){
+			l = i*a;
+			$(this).css({'left' : l , 'width' : a});
+		});
+	}else{
+		for (var i = 0; i < c; i++) {
+			l = i*a;
+			console.log('Left: ' + l);
+			$e.append(
+				'<div class="hit-area" style="width:' + a + 'px; left:' + l + 'px;"></div>'
+			);
+		}
+	}
+}
+
 $(document).ready(function() {
 	navPos();
 	$(window).on("debouncedresize", function( event ) {
 		navPos();
+		hitAreas(imgStats());
 		$('#marker-shape').moveMarker($('.nav-item.active').data())
 	});
 	$('#marker-shape')
@@ -59,4 +98,24 @@ $(document).ready(function() {
 			console.log(data);
 		}
 	);
+	
+	hitAreas(imgStats());
+	
+	$('.hit-area').hover(
+		function(){
+			var i = $(this).index();
+			console.log(i);
+			console.log($('#imgs .img').length);
+			$('#imgs .img').each(function(){
+				if($(this).index() == i){
+					$(this).addClass('img-show');
+				}else{
+					$(this).removeClass('img-show');
+				}
+			});	
+		},
+		function(){
+		}
+	);
+		
 });

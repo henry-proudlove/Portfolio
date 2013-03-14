@@ -45,11 +45,43 @@
         		<a></a>
         		<a></a>
         	</section> #content -->
+        	
+        	<section id="content" class="intro no-scroll clearfix">
+        		<div id="imgs">
+        			<?php
+        
+						$dir = "img/intro-imgs/";
+			
+						// Open a known directory, and proceed to read its contents
+						if (is_dir($dir)) {
+							if ($dh = opendir($dir)) {
+								$images = array();
+								while (($file = readdir($dh)) !== false) {
+									if (!is_dir($dir.$file)) {
+										$images[] = $file;
+									}
+								}
+								closedir($dh);
+							}
+						}
+						$ic = count($images);
+						for($i=0; $i < $ic; $i ++){
+							if($i==0){
+								echo '<div class="img img-show" style="background-image:url(\'img/intro-imgs/' . $images[$i] . '\'); background-size: cover"></div>'; 
+							}else{
+								echo '<div class="img" style="background-image:url(\'img/intro-imgs/' . $images[$i] . '\'); background-size: cover"></div>'; 
+							}
+						}
+					?>
+				</div>
+				<div id="hit-areas"></div>
+        	</section> <!-- #content -->
+        	
         	<!--<section id="content" class="no-scroll clearfix">
         		<a href="#" class="email"><span>Email</span></a>
         		<a href="#" class="linkedin"><span>LinkedIn</span></a>
         	</section> #content.contact -->
-        	<section id="content" class="clearfix about">
+        	<!--<section id="content" class="clearfix about">
         		<article>
         			<h1 class="about-title">Hi</h1>
         			<section class="about-section">
@@ -74,11 +106,9 @@
         				<a href="#" class="cv-link">CV</a>
         			</footer>
         		</article>
-        	</section><!--#content.about-->
-        		
+        	</section> #content.about-->
         	
         </div><!--#container-->
-
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.9.0.min.js"><\/script>')</script>
         <script src="js/plugins.js"></script>
