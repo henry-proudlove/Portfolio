@@ -15,35 +15,47 @@ $("#content.thumbs a").each( function(){
 
 function navPos(){
 	$('.nav-item').each(function(){
-		pos = $(this).offset().left - $('#site-nav').offset().left;
-		width = $(this).width();
-		$(this).data({
+		$e = $(this);
+		pos = $e.position().left;
+		pad = parseInt($e.css('padding-left'));
+		pos = pos + pad;
+		width = $e.width();
+		if ($e.hasClass('last') && $(window).width() > 720){
+			width = width - 3;
+			console.log('YEAH!');
+		}
+		$e.data({
 			'pos' : pos,
 			'width' : width
 		});
-		console.log($(this).data().pos);
+		console.log('position: ' + pos);
 	});
+}
+
+function moveMarker(d){
+	$('#marker-shape').width(d.width);
+	$('#marker-shape').css('left' , d.pos);
 }
 
 $(document).ready(function() {
 	navPos();
 	$(window).on("debouncedresize", function( event ) {
 		navPos();
+		moveMarker($('.nav-item.active').data());
 	});
 	
-	$('#marker-shape').width($('.nav-item.active').data().width);
+	moveMarker($('.nav-item.active').data());
 	
 	$('.nav-item').hover( 
 		function(){
 			var data = $(this).data();
+			moveMarker(data);
 			console.log(data);
-			$('#marker-shape').width(data.width);
-			$('#marker-shape').css('left' , data.pos);
 		},
 		function(){
 			var data = $('.nav-item.active').data();
-			$('#marker-shape').width(data.width);
-			$('#marker-shape').css('left' , data.pos);
+			moveMarker(data);
+			console.log(data);
 		}
-		);
+	);
 });
