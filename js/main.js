@@ -91,9 +91,7 @@ $(document).ready(function() {
 		}
 	);
 	
-	var  imgs = imgStats();
-	console.log(imgs);
-	$('#content.intro').hover(function(){
+	/*$('#content.intro').hover(function(){
 		var imgs = $('#content.intro').find('#imgs').children();
 		var c = imgs.length;
 		var w = $(this).width();
@@ -123,9 +121,9 @@ $(document).ready(function() {
 				}
 			});	
    		}); 
-	});
-	
-	/*$('.hit-area').hover(
+	});*/
+	hitAreas(imgStats());
+	$('.hit-area').hover(
 		function(){
 			var i = $(this).index();
 			console.log(i);
@@ -140,6 +138,6 @@ $(document).ready(function() {
 		},
 		function(){
 		}
-	);*/
+	);
 		
 }); 

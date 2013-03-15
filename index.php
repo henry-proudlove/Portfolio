@@ -59,9 +59,9 @@
 						$ic = count($images);
 						for($i=0; $i < $ic; $i ++){
 							if($i==0){
-								echo '<div class="img img-show"><div style="background-image:url(\'' . $images[$i] . '\'); background-size:cover; background-position-y: center;"></div></div>'; 
+								echo '<div class="img img-show" style="background-image:url(\'' . $images[$i] . '\'); background-size:cover; background-position-y: center;"></div>'; 
 							}else{
-								echo '<div class="img"><div style="background-image:url(\'' . $images[$i] . '\'); background-size:cover; background-position-y: center;"></div></div>'; 
+								echo '<div class="img" style="background-image:url(\'' . $images[$i] . '\'); background-size:cover; background-position-y: center;"></div>'; 
 							}
 						}
 					?>
