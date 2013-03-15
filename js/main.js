@@ -41,7 +41,7 @@ jQuery.fn.moveMarker = function(d){
 }
 
 function imgStats(){
-	var imgs = $('#content.intro').find('#imgs').children();
+	var imgs = $('#content.intro #imgs .img');
 	var c = imgs.length;
 	var w = $(this).width();
 	var a = w/c;
@@ -49,10 +49,56 @@ function imgStats(){
 	return returnarr;
 }
 
+function keyFrames(){
+	var $imgs = $('#content.intro #imgs .img');
+	
+	var c = $imgs.length; // number of images
+	var w = $(this).width(); // document width
+	var a = w/c; // hit area per image
+	f = 10; // number of frames per image
+	e = 5; // ratio of semi-transparent to solid frames
+	k = 0; // index of frames
+	
+	$imgs.each(function(i){
+		for(j=0; j < f; j++){
+			od = 0.5 / (f/e);
+			jd = j/f;
+			console.log('Ratio: ' + jd + ' Opacity diff: ' + od);
+			k++;
+			frame = 'frame' + k;
+			if(j < f/e && $(this).index() != 0){
+				var o = 0.5 + (od*jd);
+				$(this)
+					.clone()
+					.css({'opacity' : o , 'z-index' : '2'})
+					.appendTo('#frames')
+					.wrap('<div class="frame ' + frame + '" />');
+				$(this).prev()
+					.clone()
+					.css('z-index' , '1')
+					.appendTo('.frame' + k);
+			}else if (j > (f - (f/e)) && $(this).index() != c -1){
+				
+				$(this)
+					.clone()
+					.css({'opacity' : o , 'z-index' : '2'})
+					.appendTo('#frames')
+					.wrap('<div class="frame ' + frame + '" />');
+				$(this).next()
+					.clone()
+					.css('z-index' , '1')
+					.appendTo('.frame' + k);
+			}else{
+				$(this).clone().appendTo('#frames').wrap('<div class="frame ' + frame + '" />');
+			}
+		}
+	});
+}
+
 function hitAreas(imgs){
-	c = imgs[0];
-	w = imgs[1];
-	a = imgs[2];
+	c = $('.frame').length;
+	w = $(this).width();
+	a = w/c
 	var l = 0;
 	$e = $('#hit-areas');
 	if($e.children().length > 0){
@@ -122,17 +168,15 @@ $(document).ready(function() {
 			});	
    		}); 
 	});*/
-	hitAreas(imgStats());
+	hitAreas(keyFrames());
 	$('.hit-area').hover(
 		function(){
 			var i = $(this).index();
-			console.log(i);
-			console.log($('#imgs .img').length);
-			$('#imgs .img').each(function(){
+			$('.frame').each(function(){
 				if($(this).index() == i){
-					$(this).addClass('img-show');
+					$(this).css('display' , 'block');
 				}else{
-					$(this).removeClass('img-show');
+					$(this).css('display' , 'none').removeAttr('style');
 				}
 			});	
 		},

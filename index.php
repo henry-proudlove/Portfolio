@@ -66,6 +66,7 @@
 						}
 					?>
 				</div>
+				<div id="frames"></div>
 				<div id="hit-areas"></div>
         	</section> <!-- #content -->
         	
