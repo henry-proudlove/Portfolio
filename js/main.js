@@ -99,9 +99,29 @@ $(document).ready(function() {
 		var w = $(this).width();
 		var a = w/c;
 		$(document).mousemove(function(e){
-		  x = e.pageX;
-		  s = Math.ceil(x/a);
-		  console.log(s);
+			x = e.pageX;
+			i = Math.floor(x/a);
+			j = x/a;
+			p = j-i;
+			$('#imgs .img').each(function(){
+				if($(this).index() == i){
+					$(this).addClass('img-show');
+					$(this).next().addClass('img-next');
+					$(this).prev().addClass('img-next');
+						q = p+p;
+					if(p > 0.75){
+						$(this).css('opacity' , 1 - (q-1.5));
+						$(this).next().css({'z-index' : '1' , 'opacity' : q - 1.5});
+					}else if(p < 0.25 && !$(this).index() == 0){
+						$(this).css('opacity' , q);
+						$(this).prev().css({'z-index' : '1' , 'opacity' : 0.5 - q});
+					}
+				}else{
+					$(this).removeClass('img-show');
+					$(this).next().removeClass('img-next');
+					$(this).prev().removeClass('img-next');
+				}
+			});	
    		}); 
 	});
 	
@@ -122,4 +142,4 @@ $(document).ready(function() {
 		}
 	);*/
 		
-});
+}); 
